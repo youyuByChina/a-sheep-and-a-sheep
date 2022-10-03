@@ -21,6 +21,15 @@
 #### 第三步，替换文件【__WITHOUT_MULTI_PLUGINCODE__.wxapkg】
 #### 第四步，再重新打开微信，登录微信，打开小程序，开始游戏，即可无限道具
 ---
+## --- 2022年09月07日（失效） ---
+#### API 接口一键通关方式（由于游戏版本更新，此方式已失效）
+#### 使用 Windows 10 的 PowerShell 带上用户TOKEN直接发起通关请求
+#### 其实 PC 版微信 v3.2.1 连抓包都不需要，Applet\wx141bfb9b73c970a9\.S0 文件里就有明文的 token 值，已通关的日期和获得的皮肤也记录在这个文件里，但这个文件里的 prop_remove、prop_cancel、prop_random 的值是动态更新的，无法修改。PC 版本微信 v3.7.6 使用 usrkvstorage0.db 键值文件保存配置，非明文
+#### 操作步骤一：在电脑或者手机里先打开抓包工具，玩《羊了个羊》第 1 关
+#### 操作步骤二 ：查看抓包工具记录里域名 cat-match.easygame2021.com 请求体中的 t 值和 User-Agent 值（脚本里默认是 iPhone 15.7）
+#### 操作步骤三：修改脚本里的 $header_t 和 $header_user_agent 参数
+#### 操作步骤四：打开 Windows PowerShell ISE，输入 Set-Executionpolicy RemoteSigned 允许后再运行通关脚本
+---
 ## 一些想说的话
 #### 本项目旨在为你快速通关羊了个羊，上手需要一定动手能力以及门槛，请勿使用本程序恶意对游戏服务器持续造成压力，一切后果自负！！！t 参数包含个人信息，任何情况请勿泄漏
 #### 项目仍在，欢迎PR，并未跑路，请切换 main 分支查看，懂的都懂，点击右上角 Star 关注更新不迷路
